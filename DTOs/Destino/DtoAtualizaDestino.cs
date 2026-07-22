@@ -4,7 +4,7 @@ namespace GestaoFinanceiro.DTOs.Destino
 {
     public class DtoAtualizaDestino
     {
-       public int MetaTotal { get; set; }
+       public decimal MetaTotal { get; set; }
         public string NomeDest { get; set; } = string.Empty;
     }
 }

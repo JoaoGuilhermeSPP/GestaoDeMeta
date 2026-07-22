@@ -1,5 +1,7 @@
 
 using GestaoFinanceiro.Data;
+using GestaoFinanceiro.Services;
+using GestaoFinanceiro.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Internal;
 
@@ -18,7 +20,7 @@ namespace GestaoFinanceiro
             options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString),
             MySqlOptions => MySqlOptions.EnableRetryOnFailure()));
 
-
+            builder.Services.AddScoped<IDestinoService, DestinoService>();
             builder.Services.AddControllers();
           
             builder.Services.AddEndpointsApiExplorer();

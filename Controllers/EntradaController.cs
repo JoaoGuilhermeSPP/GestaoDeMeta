@@ -29,7 +29,7 @@ namespace GestaoFinanceiro.Controllers
                     Id = e.Id,
                     Valor = e.Valor,
                     Descricao = e.Descricao,
-                    Entr_Data = e.Entr_Data,
+                    Entr_Data = e.EntreData,
             });
         }
         [HttpPost]
@@ -39,7 +39,7 @@ namespace GestaoFinanceiro.Controllers
             {
                 Valor = dto.Valor,
                 Descricao = dto.Descricao,
-                Entr_Data = dto.Entr_Data
+                EntreData = dto.Entr_Data
             };
             _context.Entradas.Add(entrada);
             await _context.SaveChangesAsync();
@@ -48,7 +48,7 @@ namespace GestaoFinanceiro.Controllers
                 Id = entrada.Id,
                 Valor = entrada.Valor,
                 Descricao = entrada.Descricao,
-                Entr_Data = entrada.Entr_Data
+                Entr_Data = entrada.EntreData
             };
             return CreatedAtAction(nameof(GetEntradas), new{ id = entrada.Id }, entrada);
         }
@@ -121,7 +121,7 @@ namespace GestaoFinanceiro.Controllers
                 Id = entrada.Id,
                 Valor = entrada.Id,
                 Descricao = entrada.Descricao,
-                Entr_Data = entrada.Entr_Data
+                Entr_Data = entrada.EntreData
             };
             _context.Entradas.Remove(entrada);
             await _context.SaveChangesAsync();
