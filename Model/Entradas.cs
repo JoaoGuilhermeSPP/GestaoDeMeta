@@ -8,6 +8,6 @@ namespace GestaoFinanceiro.Model
         [Column(TypeName = "decimal(18,2)")]
         public decimal Valor {  get; set; }
         public string Descricao {  get; set; }
-        public DateTime Entr_Data { get; set; } = DateTime.Now;
+        public DateTime EntreData { get; set; } = DateTime.Now;
     }
 }
